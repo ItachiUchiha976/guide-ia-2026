@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maîtriser l'IA en 2026 — Guide Pratique | IA Décodée</title>
+  <meta name="description" content="Le guide pratique complet pour maîtriser l'IA en 2026. 28 pages, 30+ prompts prêts à copier, outils gratuits testés. 13€ seulement." />
+  <meta name="keywords" content="IA, intelligence artificielle, ChatGPT, Claude, Gemini, prompting, guide IA 2026" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Maîtriser l'IA en 2026 — Guide Pratique" />
+  <meta property="og:description" content="28 pages · 30+ prompts · Outils gratuits · Cas d'usage pro et perso · 13€" />
+  <meta property="og:type" content="product" />
+  <meta property="og:url" content="https://itachiuchiha976.github.io/guide-ia-2026/" />
+  <style>
+    :root {
+      --indigo:   #1A0E2E;
+      --indigo2:  #2D1B5E;
+      --cyan:     #00E5FF;
+      --cyan-soft:#B2EBF2;
+      --teal:     #00897B;
+      --orange:   #FF6F00;
+      --white:    #FFFFFF;
+      --gray-bg:  #F5F5F5;
+      --gray-txt: #424242;
+      --gray-cap: #757575;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: var(--gray-txt);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ─── HEADER ─────────────────────────────────────────────────── */
+    .topbar {
+      background: var(--indigo);
+      color: var(--cyan-soft);
+      text-align: center;
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+    }
+    .topbar strong { color: var(--cyan); }
+
+    /* ─── HERO ───────────────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--indigo) 0%, var(--indigo2) 60%, #0A1628 100%);
+      color: var(--white);
+      padding: 4rem 1.5rem 5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--cyan), var(--teal), var(--cyan));
+    }
+    .hero .brand-tag {
+      display: inline-block;
+      background: rgba(0,229,255,0.15);
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+    .hero h1 span { color: var(--cyan); }
+    .hero .subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--cyan-soft);
+      margin: 1rem auto 0;
+      max-width: 640px;
+    }
+    .hero .pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin: 2rem 0;
+    }
+    .pill {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(0,229,255,0.3);
+      color: var(--cyan-soft);
+      padding: 0.35rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+    .pill.highlight { background: rgba(0,229,255,0.15); border-color: var(--cyan); color: var(--cyan); font-weight: 600; }
+
+    /* ─── CTA BOX ────────────────────────────────────────────────── */
+    .cta-box {
+      background: var(--white);
+      color: var(--gray-txt);
+      border-radius: 16px;
+      padding: 2rem 2.5rem;
+      max-width: 420px;
+      margin: 2.5rem auto 0;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+      text-align: center;
+    }
+    .price-old {
+      font-size: 1rem;
+      color: var(--gray-cap);
+      text-decoration: line-through;
+    }
+    .price-main {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--indigo);
+      line-height: 1;
+      margin: 0.25rem 0;
+    }
+    .price-note { font-size: 0.8rem; color: var(--gray-cap); margin-bottom: 1.25rem; }
+    .btn-buy {
+      display: block;
+      background: linear-gradient(135deg, var(--teal), #00695C);
+      color: var(--white);
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 16px rgba(0,137,123,0.4);
+    }
+    .btn-buy:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,137,123,0.5); }
+    .btn-buy-sub { font-size: 0.8rem; font-weight: 400; display: block; margin-top: 0.2rem; opacity: 0.85; }
+    .trust-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      font-size: 0.78rem;
+      color: var(--gray-cap);
+    }
+    .trust-row span::before { margin-right: 0.3rem; }
+
+    /* ─── SECTIONS ───────────────────────────────────────────────── */
+    section { padding: 4rem 1.5rem; }
+    section:nth-child(even) { background: var(--gray-bg); }
+    .container { max-width: 860px; margin: 0 auto; }
+
+    h2 {
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      color: var(--indigo);
+      margin-bottom: 0.5rem;
+      font-weight: 800;
+    }
+    h2 span { color: var(--cyan); border-bottom: 3px solid var(--cyan); padding-bottom: 2px; }
+    .section-sub {
+      color: var(--gray-cap);
+      font-size: 1rem;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+    }
+
+    /* ─── PROMISE GRID ───────────────────────────────────────────── */
+    .promise-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+    .promise-card {
+      background: var(--white);
+      border: 1px solid #E0E0E0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      border-top: 3px solid var(--cyan);
+      transition: box-shadow 0.2s;
+    }
+    .promise-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .promise-card .icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .promise-card h3 { font-size: 1.05rem; color: var(--indigo); margin-bottom: 0.5rem; }
+    .promise-card p { font-size: 0.9rem; color: var(--gray-cap); line-height: 1.5; }
+
+    /* ─── CHAPTERS ───────────────────────────────────────────────── */
+    .chapters-list { list-style: none; padding: 0; }
+    .chapters-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid #E0E0E0;
+    }
+    .ch-num {
+      background: var(--indigo);
+      color: var(--cyan);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      min-width: 2.5rem;
+      text-align: center;
+      margin-top: 0.2rem;
+    }
+    .ch-info h4 { font-size: 1rem; color: var(--indigo); margin-bottom: 0.25rem; }
+    .ch-info p { font-size: 0.88rem; color: var(--gray-cap); margin: 0; }
+
+    /* ─── PROMPTS PREVIEW ────────────────────────────────────────── */
+    .prompts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .prompt-card {
+      background: #E8F5E9;
+      border: 1.5px solid var(--teal);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+    }
+    .prompt-card .plabel {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+    .prompt-card p {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--indigo);
+      line-height: 1.5;
+    }
+
+    /* ─── STATS ──────────────────────────────────────────────────── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .stat-num { font-size: 2.5rem; font-weight: 900; color: var(--indigo); line-height: 1; }
+    .stat-label { font-size: 0.85rem; color: var(--gray-cap); margin-top: 0.4rem; }
+
+    /* ─── BONUS ──────────────────────────────────────────────────── */
+    .bonus-list { display: flex; flex-direction: column; gap: 1rem; }
+    .bonus-item {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      background: var(--white);
+      border: 1px solid #E0E0E0;
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+    }
+    .bonus-badge {
+      background: linear-gradient(135deg, var(--orange), #E65100);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      min-width: 60px;
+      text-align: center;
+    }
+    .bonus-item h4 { font-size: 1rem; color: var(--indigo); margin-bottom: 0.2rem; }
+    .bonus-item p { font-size: 0.88rem; color: var(--gray-cap); margin: 0; }
+
+    /* ─── EMAIL CAPTURE ──────────────────────────────────────────── */
+    .email-section {
+      background: linear-gradient(135deg, var(--indigo) 0%, var(--indigo2) 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 4rem 1.5rem;
+    }
+    .email-section h2 { color: var(--white); }
+    .email-section h2 span { color: var(--cyan); border-bottom-color: var(--cyan); }
+    .email-section p { color: var(--cyan-soft); margin: 0.75rem 0 2rem; font-size: 1.05rem; }
+    .email-form {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .email-form input[type="email"] {
+      flex: 1;
+      min-width: 220px;
+      padding: 0.85rem 1.25rem;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+      outline: none;
+    }
+    .email-form button {
+      background: var(--cyan);
+      color: var(--indigo);
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 0.85rem 1.75rem;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .email-form button:hover { background: #80DEEA; }
+    .email-note { font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-top: 0.75rem; }
+
+    /* ─── FINAL CTA ──────────────────────────────────────────────── */
+    .final-cta {
+      text-align: center;
+      padding: 5rem 1.5rem;
+      background: var(--white);
+    }
+    .final-cta h2 { margin-bottom: 0.75rem; }
+    .final-cta p { color: var(--gray-cap); margin-bottom: 2rem; font-size: 1.05rem; }
+    .final-price-box {
+      display: inline-block;
+      background: var(--gray-bg);
+      border: 2px solid var(--indigo);
+      border-radius: 16px;
+      padding: 2rem 3rem;
+      margin-bottom: 1.5rem;
+    }
+    .final-price-box .price-big {
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--indigo);
+      line-height: 1;
+    }
+    .final-price-box .price-period { font-size: 0.9rem; color: var(--gray-cap); }
+    .btn-buy-final {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--teal), #004D40);
+      color: var(--white);
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 1.1rem 3rem;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 6px 20px rgba(0,137,123,0.45);
+    }
+    .btn-buy-final:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0,137,123,0.55); }
+    .guarantee { margin-top: 1rem; font-size: 0.85rem; color: var(--gray-cap); }
+
+    /* ─── FOOTER ─────────────────────────────────────────────────── */
+    footer {
+      background: var(--indigo);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.82rem;
+    }
+    footer a { color: var(--cyan-soft); text-decoration: none; }
+    footer a:hover { color: var(--cyan); }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .cta-box { padding: 1.5rem 1.25rem; }
+      .final-price-box { padding: 1.5rem 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  Offre de lancement · <strong>13€ au lieu de 19€</strong> · Accès immédiat au PDF
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="brand-tag">IA Décodée — @iadecodefr</div>
+  <h1>Maîtriser l'IA<br><span>en 2026</span></h1>
+  <p class="subtitle">Le guide pratique complet pour comprendre, utiliser et tirer parti de l'intelligence artificielle — même si vous partez de zéro.</p>
+
+  <div class="pills">
+    <span class="pill">28 pages denses</span>
+    <span class="pill highlight">30+ prompts prêts à copier</span>
+    <span class="pill">5 chapitres concrets</span>
+    <span class="pill">3 bonus exclusifs</span>
+    <span class="pill">Faits vérifiés 2026</span>
+    <span class="pill">Outils 100% gratuits</span>
+  </div>
+
+  <div class="cta-box">
+    <div class="price-old">19€</div>
+    <div class="price-main">13€</div>
+    <div class="price-note">Accès immédiat · PDF téléchargeable</div>
+    <a href="https://gumroad.com/l/guide-ia-2026" class="btn-buy" id="btn-hero">
+      Obtenir le guide maintenant
+      <span class="btn-buy-sub">Paiement sécurisé via Gumroad</span>
+    </a>
+    <div class="trust-row">
+      <span>✔ PDF immédiat</span>
+      <span>✔ Satisfait ou remboursé 7j</span>
+      <span>✔ 1 paiement</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROMESSE -->
+<section>
+  <div class="container">
+    <h2>Pourquoi ce guide est <span>différent</span></h2>
+    <p class="section-sub">La plupart des contenus sur l'IA sont soit trop théoriques, soit obsolètes. Ce guide est concret, à jour, et chaque fait est sourcé.</p>
+
+    <div class="promise-grid">
+      <div class="promise-card">
+        <div class="icon">🎯</div>
+        <h3>100% pratique</h3>
+        <p>Chaque chapitre se termine par des prompts directement copiables. Vous repartez avec des outils, pas de la théorie.</p>
+      </div>
+      <div class="promise-card">
+        <div class="icon">✅</div>
+        <h3>Faits vérifiés</h3>
+        <p>Chaque statistique, chaque affirmation factuelle est sourcée et datée. Aucune invention, aucun chiffre approximatif.</p>
+      </div>
+      <div class="promise-card">
+        <div class="icon">💰</div>
+        <h3>0€ d'outils</h3>
+        <p>Tous les outils présentés ont une version gratuite suffisante. Vous n'avez pas besoin de payer des abonnements pour démarrer.</p>
+      </div>
+      <div class="promise-card">
+        <div class="icon">🚀</div>
+        <h3>À jour juin 2026</h3>
+        <p>ChatGPT GPT-5.x, Claude Opus 4.x, Gemini 3.x, Grok 4.1 — les modèles et fonctionnalités de 2026, pas de 2023.</p>
+      </div>
+      <div class="promise-card">
+        <div class="icon">🔐</div>
+        <h3>Sécurité incluse</h3>
+        <p>Deepfakes, arnaques, confidentialité des données, EU AI Act — vous saurez comment vous protéger.</p>
+      </div>
+      <div class="promise-card">
+        <div class="icon">🎁</div>
+        <h3>3 bonus offerts</h3>
+        <p>Plan 7 jours, 30 prompts supplémentaires classés par catégorie, et un glossaire de 31 termes IA.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHIFFRES CLÉS -->
+<section>
+  <div class="container">
+    <h2>L'IA en <span>chiffres</span> (2026)</h2>
+    <p class="section-sub">Pourquoi vous ne pouvez plus ignorer l'IA. Sources : KPMG Trends AI 2026, Incremys, McKinsey 2025.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">78%</div>
+        <div class="stat-label">des organisations mondiales utilisent l'IA dans au moins une fonction</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">+30%</div>
+        <div class="stat-label">de gains de productivité constatés en Europe avec l'IA générative</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">90%</div>
+        <div class="stat-label">des utilisateurs IA estiment qu'elle leur fait gagner du temps</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">26%</div>
+        <div class="stat-label">des TPE/PME françaises utilisent déjà l'IA générative — chiffre doublé en 1 an</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOMMAIRE -->
+<section>
+  <div class="container">
+    <h2>Ce que contient <span>le guide</span></h2>
+    <p class="section-sub">5 chapitres + 3 bonus, pour aller du zéro à l'utilisation avancée en moins d'une semaine.</p>
+
+    <ul class="chapters-list">
+      <li>
+        <span class="ch-num">CH.1</span>
+        <div class="ch-info">
+          <h4>Comprendre les LLM</h4>
+          <p>Comment fonctionnent vraiment ChatGPT, Claude et Gemini. Tokens, hallucinations, fenêtre de contexte. Tableau comparatif des 6 modèles principaux de 2026.</p>
+        </div>
+      </li>
+      <li>
+        <span class="ch-num">CH.2</span>
+        <div class="ch-info">
+          <h4>L'Art du Prompting</h4>
+          <p>La règle des 3C, zero-shot, few-shot, chain-of-thought, role prompting, techniques avancées 2026 (meta-prompting, CoS). Bibliothèque de 8 prompts pro.</p>
+        </div>
+      </li>
+      <li>
+        <span class="ch-num">CH.3</span>
+        <div class="ch-info">
+          <h4>Les Meilleurs Outils Gratuits</h4>
+          <p>Analyse détaillée de ChatGPT, Claude, Gemini, Perplexity, Grok, Mistral Le Chat. Plus : images, voix, vidéo, productivité. Tout en version gratuite.</p>
+        </div>
+      </li>
+      <li>
+        <span class="ch-num">CH.4</span>
+        <div class="ch-info">
+          <h4>Cas d'Usage Perso et Pro</h4>
+          <p>5 grandes catégories : rédaction pro, apprentissage, créativité, automatisation, entrepreneuriat. Avec prompts spécifiques pour chaque situation.</p>
+        </div>
+      </li>
+      <li>
+        <span class="ch-num">CH.5</span>
+        <div class="ch-info">
+          <h4>Sécurité et Pièges à Éviter</h4>
+          <p>Deepfakes, arnaques IA, hallucinations, données personnelles, EU AI Act. Tout ce qu'il faut savoir pour utiliser l'IA en toute sécurité.</p>
+        </div>
+      </li>
+      <li>
+        <span class="ch-num">BONUS</span>
+        <div class="ch-info">
+          <h4>3 Bonus Exclusifs</h4>
+          <p>Plan "7 jours pour maîtriser l'IA" · 30 prompts supplémentaires par catégorie · Glossaire de 31 termes IA essentiels.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- APERÇU PROMPTS -->
+<section>
+  <div class="container">
+    <h2>Aperçu de vos <span>prompts</span></h2>
+    <p class="section-sub">Voici un avant-goût de la bibliothèque de 38+ prompts incluse dans le guide. Copiez, adaptez, utilisez.</p>
+
+    <div class="prompts-grid">
+      <div class="prompt-card">
+        <div class="plabel">✔ Prompt — Email difficile</div>
+        <p>"Tu es un expert en communication RH. Rédige un email professionnel pour annoncer [sujet]. Ton : positif et rassurant. 150 mots max."</p>
+      </div>
+      <div class="prompt-card">
+        <div class="plabel">✔ Prompt — Apprendre vite</div>
+        <p>"Explique [concept] comme si j'avais 15 ans, sans jargon. Donne 3 exemples de la vie quotidienne et termine par une analogie mémorable."</p>
+      </div>
+      <div class="prompt-card">
+        <div class="plabel">✔ Prompt — Décision structurée</div>
+        <p>"J'ai cette décision à prendre : [DÉCRIRE]. Utilise le cadre des 10-10-10 (10 min / 10 mois / 10 ans) puis donne ta recommandation."</p>
+      </div>
+      <div class="prompt-card">
+        <div class="plabel">✔ Prompt — Anti-hallucination</div>
+        <p>"À la fin de chaque réponse factuelle, ajoute les sources utilisées et signale avec ⚠️ les affirmations sans source fiable."</p>
+      </div>
+      <div class="prompt-card">
+        <div class="plabel">✔ Prompt — Page de vente</div>
+        <p>"Crée la structure d'une page de vente pour [PRODUIT]. Inclus : accroche, problème, solution, 5 bénéfices, FAQ x3, CTA. Cible : [PERSONA]."</p>
+      </div>
+      <div class="prompt-card">
+        <div class="plabel">✔ Prompt — Plan de projet</div>
+        <p>"Projet : [DÉCRIRE]. Délai : [X semaines]. Crée un plan agile avec sprints de 2 semaines. Pour chaque sprint : objectif, livrables, risques."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BONUS -->
+<section>
+  <div class="container">
+    <h2>Vos <span>3 bonus</span> inclus</h2>
+    <p class="section-sub">En plus des 5 chapitres principaux, le guide inclut trois bonus qui en doublent la valeur pratique.</p>
+
+    <div class="bonus-list">
+      <div class="bonus-item">
+        <span class="bonus-badge">BONUS 1</span>
+        <div>
+          <h4>Plan "7 Jours Pour Maîtriser l'IA"</h4>
+          <p>Un programme jour par jour, 20-30 minutes par jour, pour passer de débutant à utilisateur avancé. Avec objectifs mesurables chaque soir.</p>
+        </div>
+      </div>
+      <div class="bonus-item">
+        <span class="bonus-badge">BONUS 2</span>
+        <div>
+          <h4>30 Prompts Supplémentaires par Catégorie</h4>
+          <p>Productivité, communication, recherche, marketing, créativité, bien-être, code — 30 prompts prêts à copier, organisés par situation de vie.</p>
+        </div>
+      </div>
+      <div class="bonus-item">
+        <span class="bonus-badge">BONUS 3</span>
+        <div>
+          <h4>Glossaire de 31 Termes IA Essentiels</h4>
+          <p>De AGI à Zero-shot, en passant par RAG, RLHF, Transformer et EU AI Act — tous les termes expliqués simplement, sans jargon.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL CAPTURE -->
+<section class="email-section">
+  <h2>Restez à jour sur <span>l'IA</span></h2>
+  <p>Recevez chaque semaine les nouvelles importantes en IA expliquées simplement — directement dans votre boîte mail. Gratuit.</p>
+  <form class="email-form" onsubmit="handleEmail(event)">
+    <input type="email" id="emailInput" placeholder="votre@email.fr" required />
+    <button type="submit">S'inscrire gratuitement</button>
+  </form>
+  <p id="emailMsg" style="display:none;color:var(--cyan);margin-top:0.75rem;font-size:0.9rem;"></p>
+  <p class="email-note">Zéro spam. Désabonnement en 1 clic. Données conservées dans l'UE (RGPD).</p>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Prêt à <span>maîtriser l'IA</span> ?</h2>
+    <p>Accès immédiat au PDF après paiement. Satisfait ou remboursé sous 7 jours, sans question posée.</p>
+
+    <div class="final-price-box">
+      <div class="price-big">13€</div>
+      <div class="price-period">Paiement unique · Accès à vie</div>
+    </div>
+    <br />
+    <a href="https://gumroad.com/l/guide-ia-2026" class="btn-buy-final" id="btn-final">
+      Acheter le guide — 13€
+    </a>
+    <p class="guarantee">
+      ✔ Satisfait ou remboursé 7 jours &nbsp;·&nbsp; ✔ PDF immédiat &nbsp;·&nbsp; ✔ Paiement sécurisé Gumroad
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    <strong style="color:var(--cyan-soft)">Maîtriser l'IA en 2026</strong> — Guide pratique by
+    <a href="https://www.youtube.com/@iadecodefr" target="_blank" rel="noopener">IA Décodée (@iadecodefr)</a>
+  </p>
+  <p style="margin-top:0.5rem">
+    &copy; 2026 BOS Digital Products · Tous droits réservés ·
+    <a href="https://www.youtube.com/@iadecodefr" target="_blank" rel="noopener">YouTube</a>
+  </p>
+  <p style="margin-top:0.5rem;font-size:0.75rem;opacity:0.6">
+    Image couverture : Pexels (licence gratuite, usage commercial autorisé) ·
+    Statistiques sources : KPMG 2026, Incremys 2026, McKinsey 2025, Bpifrance 2026
+  </p>
+</footer>
+
+<script>
+  function handleEmail(e) {
+    e.preventDefault();
+    var email = document.getElementById('emailInput').value;
+    var msg = document.getElementById('emailMsg');
+    if (email) {
+      msg.textContent = 'Merci ! Vous allez recevoir un email de confirmation.';
+      msg.style.display = 'block';
+      document.getElementById('emailInput').value = '';
+    }
+  }
+
+  // UTM tracking for buy buttons
+  (function() {
+    var btns = document.querySelectorAll('[id^="btn-"]');
+    btns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        // Analytics placeholder
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'click_buy', { event_category: 'CTA', event_label: btn.id });
+        }
+      });
+    });
+  })();
+</script>
+</body>
+</html>
