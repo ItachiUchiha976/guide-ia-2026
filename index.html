@@ -609,7 +609,11 @@
   <h2>Restez à jour sur <span>l'IA</span></h2>
   <p>Recevez chaque semaine les nouvelles importantes en IA expliquées simplement — directement dans votre boîte mail. Gratuit.</p>
   <form class="email-form" onsubmit="handleEmail(event)">
-    <input type="email" id="emailInput" placeholder="votre@email.fr" required />
+    <input type="hidden" name="access_key" value="d97a8c73-b827-48bb-b437-e053a73fdb7e">
+    <input type="hidden" name="subject" value="Lead guide-ia-2026">
+    <input type="hidden" name="from_name" value="Maîtriser l'IA en 2026">
+    <input type="checkbox" name="botcheck" style="display:none !important" tabindex="-1" autocomplete="off">
+    <input type="email" id="emailInput" name="email" placeholder="votre@email.fr" required />
     <button type="submit">S'inscrire gratuitement</button>
   </form>
   <p id="emailMsg" style="display:none;color:var(--cyan);margin-top:0.75rem;font-size:0.9rem;"></p>
@@ -655,13 +659,30 @@
 <script>
   function handleEmail(e) {
     e.preventDefault();
-    var email = document.getElementById('emailInput').value;
+    var form = e.target;
     var msg = document.getElementById('emailMsg');
-    if (email) {
-      msg.textContent = 'Merci ! Vous allez recevoir un email de confirmation.';
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: new FormData(form)
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if (d.success) {
+        msg.textContent = 'Merci ! Vous allez recevoir un email de confirmation.';
+        msg.style.color = 'var(--cyan)';
+        msg.style.display = 'block';
+        form.reset();
+      } else {
+        msg.textContent = 'Une erreur est survenue. Réessayez dans un instant.';
+        msg.style.color = '#ff6b6b';
+        msg.style.display = 'block';
+      }
+    })
+    .catch(function(){
+      msg.textContent = 'Une erreur est survenue. Réessayez dans un instant.';
+      msg.style.color = '#ff6b6b';
       msg.style.display = 'block';
-      document.getElementById('emailInput').value = '';
-    }
+    });
   }
 
   // UTM tracking for buy buttons
