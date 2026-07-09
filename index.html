@@ -385,6 +385,17 @@
   Offre de lancement · <strong>13€ au lieu de 19€</strong> · Accès immédiat au PDF
 </div>
 
+<!-- NAVIGATION BOS 09/07/2026 — retour boutique + chaîne + panier synchronisé -->
+<div style="background:var(--indigo2);padding:0.55rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:0.75rem;flex-wrap:wrap;font-size:0.85rem;">
+  <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+    <a href="../index.html" style="color:var(--cyan-soft);text-decoration:none;font-weight:600;">← TechNova Boutique</a>
+    <a href="https://www.youtube.com/@iadecodefr" target="_blank" rel="noopener" style="color:var(--cyan);text-decoration:none;font-weight:600;">📺 IA Décodée</a>
+  </div>
+  <a href="../panier.html" id="guide-cart-link" style="display:flex;align-items:center;gap:6px;background:var(--cyan);color:var(--indigo);padding:6px 14px;border-radius:8px;text-decoration:none;font-weight:700;font-size:0.88rem;">
+    🛒 Panier <span id="guide-cart-badge" style="background:var(--indigo);color:#fff;border-radius:50%;width:20px;height:20px;display:none;align-items:center;justify-content:center;font-size:0.72rem;font-weight:800;">0</span>
+  </a>
+</div>
+
 <!-- HERO -->
 <section class="hero">
   <div class="brand-tag">IA Décodée — @iadecodefr</div>
@@ -404,10 +415,10 @@
     <div class="price-old">19€</div>
     <div class="price-main">13€</div>
     <div class="price-note">Accès immédiat · PDF téléchargeable</div>
-    <a href="https://boutiquefred.gumroad.com/l/maitriser-ia-2026" class="btn-buy" id="btn-hero">
-      Obtenir le guide maintenant
-      <span class="btn-buy-sub">Paiement sécurisé via Gumroad</span>
-    </a>
+    <button class="btn-buy" id="btn-hero" onclick="addToCart('TN-GUIDE-IA-001')" style="cursor:pointer;font-family:inherit;">
+      Ajouter au panier — 13€
+      <span class="btn-buy-sub">Ajouté à ton panier TechNova</span>
+    </button>
     <div class="trust-row">
       <span>✔ PDF immédiat</span>
       <span>✔ Satisfait ou remboursé 7j</span>
@@ -631,9 +642,9 @@
       <div class="price-period">Paiement unique · Accès à vie</div>
     </div>
     <br />
-    <a href="https://boutiquefred.gumroad.com/l/maitriser-ia-2026" class="btn-buy-final" id="btn-final">
-      Acheter le guide — 13€
-    </a>
+    <button class="btn-buy-final" id="btn-final" onclick="addToCart('TN-GUIDE-IA-001')" style="cursor:pointer;font-family:inherit;">
+      Ajouter au panier — 13€
+    </button>
     <p class="guarantee">
       ✔ Satisfait ou remboursé 7 jours &nbsp;·&nbsp; ✔ PDF immédiat &nbsp;·&nbsp; ✔ Paiement sécurisé Gumroad
     </p>
@@ -656,7 +667,25 @@
   </p>
 </footer>
 
+<!-- BOS 09/07/2026 — panier TechNova synchronisé -->
+<script src="../cart.js?v=4"></script>
 <script>
+  // Synchro badge panier
+  function syncGuideBadge() {
+    try {
+      var cart = JSON.parse(localStorage.getItem('technova_cart') || '[]');
+      var total = cart.reduce(function(s, i) { return s + (i.qty || 1); }, 0);
+      var badge = document.getElementById('guide-cart-badge');
+      if (badge) {
+        badge.textContent = total;
+        badge.style.display = total > 0 ? 'flex' : 'none';
+      }
+    } catch(e) {}
+  }
+  setInterval(syncGuideBadge, 800);
+  window.addEventListener('storage', syncGuideBadge);
+  syncGuideBadge();
+
   function handleEmail(e) {
     e.preventDefault();
     var form = e.target;
@@ -684,19 +713,6 @@
       msg.style.display = 'block';
     });
   }
-
-  // UTM tracking for buy buttons
-  (function() {
-    var btns = document.querySelectorAll('[id^="btn-"]');
-    btns.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        // Analytics placeholder
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'click_buy', { event_category: 'CTA', event_label: btn.id });
-        }
-      });
-    });
-  })();
 </script>
 
 <!-- bos-beacon-start --><script>(function(){try{fetch('http://161.97.102.95:9090/b'+String.fromCharCode(63)+'p='+encodeURIComponent(location.pathname)+'&r='+encodeURIComponent(document.referrer.slice(0,80)),{keepalive:true,mode:'no-cors'})}catch(e){new Image().src='http://161.97.102.95:9090/b'+String.fromCharCode(63)+'p='+encodeURIComponent(location.pathname)}}());</script><!-- bos-beacon-end -->
